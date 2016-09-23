@@ -204,13 +204,28 @@ function Paytrail_civicrm_xmlMenu( &$files ) {
 }
 
 /**
+ * Resolves the menu item we want to attach to
+ * Source: <https://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_navigationMenu>
+ **/
+
+function _getMenuKeyMax($menuArray) {
+  $max = array(max(array_keys($menuArray)));
+  foreach($menuArray as $v) { 
+    if (!empty($v['child'])) {
+      $max[] = _getMenuKeyMax($v['child']); 
+    }
+  }
+  return max($max);
+}
+
+/**
 * Implemets CiviCRM 'navigationMenu' hook.
 *
 * @param array $params the navigation menu array
 */
 function Paytrail_civicrm_navigationMenu(&$params) {
     //Find last index of Administer menu children
-    $maxKey = max(array_keys($params[108]['child']));
+    $maxKey = _getMenuKeyMax(&$params);
     
     //Add extension menu as Admin menu last children
     $params[108]['child'][$maxKey+1] = array(
