@@ -225,7 +225,7 @@ function _getMenuKeyMax($menuArray) {
 */
 function Paytrail_civicrm_navigationMenu(&$params) {
     //Find last index of Administer menu children
-    $maxKey = _getMenuKeyMax(&$params);
+    $maxKey = _getMenuKeyMax($params);
     
     //Add extension menu as Admin menu last children
     $params[108]['child'][$maxKey+1] = array(
