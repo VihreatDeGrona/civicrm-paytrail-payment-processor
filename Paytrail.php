@@ -10,7 +10,7 @@
  * https://github.com/cray146/CiviCRM-Ogone-Payment-Processor
  */
 
-require_once 'Verkkomaksut_Module_Rest.php';
+require_once 'Paytrail_Module_Rest.php';
 require_once 'PaytrailConfigHelper.php';
 require_once 'PaytrailPaymentHelper.php';
 
