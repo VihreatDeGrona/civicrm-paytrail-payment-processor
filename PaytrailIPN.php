@@ -308,7 +308,8 @@ class com_github_anttikekki_payment_paytrailIPN extends CRM_Core_Payment_BaseIPN
         $finalURL = CRM_Utils_System::url('civicrm/contribute/transact', "_qf_ThankYou_display=1&qfKey={$privateData['qfKey']}", false, null, false);
       }
     }
-    CRM_Utils_System::redirect( $finalURL );
+
+    header("Location: " . $finalURL);
   }
   
   /**
