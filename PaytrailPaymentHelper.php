@@ -181,7 +181,7 @@ class PaytrailPaymentHelper {
     $description = $this->paytrailConfig->get("e1.$component.value.firstName")." "
       .$this->paytrailConfig->get("e1.$component.value.lastName").". "
       .$this->paytrailConfig->get("e1.$component.value.productTitle").". "
-      .$this->paytrailConfig->get("e1.$component.value.productPrice")." €";
+      .$this->paytrailConfig->get("e1.$component.value.productPrice")."EUR";
     $payment->setDescription($description);
 
     // Adding one or more product rows to the payment
