@@ -228,7 +228,7 @@ function Paytrail_civicrm_navigationMenu(&$params) {
     $maxKey = _getMenuKeyMax($params);
 
     // Find Admin menu
-    $adminId = CRM_Core_DAO::getFieldValue('CRM_Core_DAO_Navigation', 'Admin', 'id', 'name');
+    $adminId = CRM_Core_DAO::getFieldValue('CRM_Core_DAO_Navigation', 'Administer', 'id', 'name');
     
     //Add extension menu as Admin menu last children
     $params[$adminId]['child'][$maxKey+1] = array(
